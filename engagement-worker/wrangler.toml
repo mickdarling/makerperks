@@ -26,7 +26,7 @@ CHALLENGE_EVENT_TYPES = ""
 [[d1_databases]]
 binding = "DB"
 database_name = "makerperks-engagement"
-database_id = "1f7d6d10-cc2e-4927-9d61-f50ca0de02a4"
+database_id = "687d8b8f-b9db-426b-81c9-dcdd37759a72"
 migrations_dir = "migrations"
 
 # Per-IP soft rate limit (no resource to create; namespace_id is an arbitrary int).

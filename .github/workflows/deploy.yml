@@ -43,6 +43,11 @@ jobs:
           # GitHub-guide fallback. Set both in the github-pages environment to enable.
           PUBLIC_CONTRIBUTE_API: ${{ vars.PUBLIC_CONTRIBUTE_API }}
           PUBLIC_TURNSTILE_SITE_KEY: ${{ vars.PUBLIC_TURNSTILE_SITE_KEY }}
+          # Anonymous engagement / favorites. Empty/unset = the engagement helper is a
+          # no-op (favorites stay client-only, no counts). Set in the github-pages
+          # environment to enable. PUBLIC_FAVORITES_COUNT_MIN defaults to 10.
+          PUBLIC_ENGAGEMENT_ENDPOINT: ${{ vars.PUBLIC_ENGAGEMENT_ENDPOINT }}
+          PUBLIC_FAVORITES_COUNT_MIN: ${{ vars.PUBLIC_FAVORITES_COUNT_MIN }}
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
