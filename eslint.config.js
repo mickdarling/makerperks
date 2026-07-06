@@ -11,6 +11,7 @@ export default [
       "src/content/",
       "mcp-worker/",
       "worker/",
+      "engagement-worker/",
     ],
   },
   js.configs.recommended,

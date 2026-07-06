@@ -1,0 +1,48 @@
+name = "makerperks-engagement"
+main = "src/index.ts"
+compatibility_date = "2025-09-01"
+compatibility_flags = ["nodejs_compat"]
+
+# Workers Logs — keep in sync with the dashboard (Observability enabled there).
+[observability.logs]
+enabled = true
+invocation_logs = true
+
+# Non-secret config. The only secret is TURNSTILE_SECRET, set with
+# `wrangler secret put TURNSTILE_SECRET` and NEVER committed. See README.md.
+[vars]
+# Comma-separated origins allowed to call the API (CORS). Production site + local dev.
+ALLOWED_ORIGINS = "https://makerperks.com,https://www.makerperks.com,http://localhost:4321"
+# Event types this substrate accepts. Low-stakes by default; add types as features land.
+EVENT_TYPES = "favorite,redeem"
+# Event types that REQUIRE a Turnstile token (escalation). Empty by default — a
+# low-stakes favorite needs no challenge. e.g. set to "redeem" if a type gets abused.
+CHALLENGE_EVENT_TYPES = ""
+
+# D1 — the engagement store. Create it once with:
+#   wrangler d1 create makerperks-engagement
+# then paste the returned database_id below and apply migrations:
+#   wrangler d1 migrations apply makerperks-engagement
+[[d1_databases]]
+binding = "DB"
+database_name = "makerperks-engagement"
+database_id = "1f7d6d10-cc2e-4927-9d61-f50ca0de02a4"
+migrations_dir = "migrations"
+
+# Per-IP soft rate limit (no resource to create; namespace_id is an arbitrary int).
+[[ratelimits]]
+name = "RATE_LIMITER_IP"
+namespace_id = "3001"
+simple = { limit = 60, period = 60 }
+
+# Per-session soft rate limit — a single browser can't hammer writes even behind one IP.
+[[ratelimits]]
+name = "RATE_LIMITER_SESSION"
+namespace_id = "3002"
+simple = { limit = 30, period = 60 }
+
+# Deploy to the *.workers.dev URL by default. Promote to the reserved agent domain once
+# `anon-favorites` ships (ensure makerperks.dev is a zone on this Cloudflare account):
+# [[routes]]
+# pattern = "api.makerperks.dev/engagement/*"
+# zone_name = "makerperks.dev"

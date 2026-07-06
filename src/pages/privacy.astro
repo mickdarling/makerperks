@@ -9,6 +9,11 @@ const updated = "2026-06-27";
 // policy must disclose it and stop claiming "no marketing trackers / no third-party
 // sharing" without qualification. Off (the default) keeps the original strong claims.
 const APOLLO_ENABLED = Boolean(import.meta.env.PUBLIC_APOLLO_APP_ID);
+
+// When the engagement substrate is enabled, saving a perk stores a first-party
+// functional id + your saved targets (no personal data). Off (default) keeps the
+// "no accounts / no stored data" claims below unqualified.
+const ENGAGEMENT_ENABLED = Boolean(import.meta.env.PUBLIC_ENGAGEMENT_ENDPOINT);
 ---
 
 <Base
@@ -80,6 +85,27 @@ const APOLLO_ENABLED = Boolean(import.meta.env.PUBLIC_APOLLO_APP_ID);
         )
       }
 
+      {
+        ENGAGEMENT_ENABLED && (
+          <>
+            <h2>Saving perks</h2>
+            <p>
+              If you save a perk (add it to favorites), we store a{" "}
+              <strong>first-party functional identifier</strong> in your
+              browser's local storage and record which perks you saved on our
+              own servers, so your list is there when you come back. This
+              identifier is created{" "}
+              <strong>only when you take that action</strong> — not from
+              browsing — and is <strong>random and anonymous</strong>: it is not
+              your name or email, is never shared with a third party, and is not
+              a cross-site advertising cookie. Clearing your browser storage
+              forgets it. Our cookieless page analytics (above) is separate and
+              unaffected.
+            </p>
+          </>
+        )
+      }
+
       <h2>What we do not do</h2>
       <ul>
         {
@@ -93,7 +119,17 @@ const APOLLO_ENABLED = Boolean(import.meta.env.PUBLIC_APOLLO_APP_ID);
           )
         }
         <li>No affiliate links or referral codes.</li>
-        <li>No accounts, sign-ups, or stored personal information.</li>
+        {
+          ENGAGEMENT_ENABLED ? (
+            <li>
+              No accounts or sign-ups. The only data tied to you is the
+              anonymous saved-perks list described above — no personal
+              information.
+            </li>
+          ) : (
+            <li>No accounts, sign-ups, or stored personal information.</li>
+          )
+        }
         {
           APOLLO_ENABLED ? (
             <li>
