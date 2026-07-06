@@ -2,6 +2,10 @@
 import { displayValue, programPath, type Program } from "../lib/programs";
 import { label } from "../lib/labels";
 import logoManifest from "../data/logo-manifest.json";
+import SaveButton from "./SaveButton.astro";
+
+// Engagement is build-time gated: no endpoint → no Save hearts in the markup at all.
+const engagementOn = Boolean(import.meta.env.PUBLIC_ENGAGEMENT_ENDPOINT);
 
 interface Props {
   program: Program;
@@ -55,10 +59,23 @@ const searchText =
       }
       <span class="card__provider">{label(d.provider_slug)}</span>
     </div>
-    <div class="card__flags">
-      {d.aggregator && <span class="tag tag--gateway">Gateway</span>}
-      {isDiscontinued && <span class="tag tag--off">Discontinued</span>}
-      {d.region !== "global" && <span class="tag">{d.region}</span>}
+    <div class="card__head-right">
+      <div class="card__flags">
+        {d.aggregator && <span class="tag tag--gateway">Gateway</span>}
+        {isDiscontinued && <span class="tag tag--off">Discontinued</span>}
+        {d.region !== "global" && <span class="tag">{d.region}</span>}
+      </div>
+      {
+        engagementOn && (
+          <>
+            <span class="card__saves" data-fav-count={program.id} hidden>
+              <span class="tnum" data-fav-count-n />+
+              <span class="visually-hidden"> saved</span>
+            </span>
+            <SaveButton target={program.id} label={d.title} variant="card" />
+          </>
+        )
+      }
     </div>
   </header>
 
@@ -126,6 +143,28 @@ const searchText =
     align-items: center;
     gap: 0.55rem;
     min-width: 0;
+  }
+  /* Flags + popularity count + Save heart, pinned to the card's top-right. */
+  .card__head-right {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    flex: none;
+    /* Nudge the heart toward the corner, optically aligned with the logo row. */
+    margin: -0.15rem -0.2rem -0.15rem 0;
+  }
+  /* Popularity: a quiet bucketed count beside the heart. Threshold-gated + revealed by
+     JS, so most cards show nothing and the grid stays calm. Muted (the red stays
+     exclusive to the user's own saved heart); tabular figures. */
+  .card__saves {
+    font-size: var(--fs-xs);
+    color: var(--ink-muted);
+    font-variant-numeric: tabular-nums;
+    line-height: 1;
+    white-space: nowrap;
+  }
+  .card__saves[hidden] {
+    display: none;
   }
   /* Uniform square so cards align regardless of source aspect ratio. */
   .card__logo {

@@ -21,6 +21,11 @@
   --green-tint: oklch(95% 0.03 158);
   --green-ink: oklch(38% 0.12 158); /* green text on paper, >=4.5:1 */
 
+  /* Saved/favorite — a semantic affordance color. A red heart reads "saved" the way a
+     green one can't; used ONLY for the favorite control, not as a brand accent. */
+  --heart: oklch(58% 0.19 18);
+  --heart-deep: oklch(50% 0.19 18);
+
   /* status hues — paired with text/icon, never color-only */
   --amber-ink: oklch(48% 0.11 75);
   --amber-tint: oklch(95% 0.04 85);

@@ -33,3 +33,10 @@ pnpm-debug.log*
 
 # Playwright
 .playwright-mcp/
+
+# Vendored skill/plugin tooling installed per-developer (impeccable, hooks) — not
+# project source; contributors install these globally, so keep them out of the repo.
+.claude/skills/impeccable/
+.github/skills/
+.github/hooks/
+

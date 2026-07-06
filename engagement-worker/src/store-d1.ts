@@ -54,6 +54,52 @@ export class D1Store implements EngagementStore {
     return targets.map((target) => ({ target, count: found.get(target) ?? 0 }));
   }
 
+  async removeEvent(
+    sessionId: string,
+    target: string,
+    type: string,
+  ): Promise<void> {
+    await this.db
+      .prepare(
+        "DELETE FROM events WHERE session_id = ?1 AND target = ?2 AND type = ?3",
+      )
+      .bind(sessionId, target, type)
+      .run();
+  }
+
+  async listBySession(sessionId: string, type: string): Promise<string[]> {
+    // Resolve the querying session to its owner, then return that owner's targets.
+    const sql =
+      "SELECT DISTINCT e.target AS target " +
+      "FROM events e JOIN sessions s ON s.session_id = e.session_id " +
+      "WHERE e.type = ?1 AND COALESCE(s.user_id, e.session_id) = " +
+      "(SELECT COALESCE(user_id, session_id) FROM sessions WHERE session_id = ?2)";
+    const { results } = await this.db
+      .prepare(sql)
+      .bind(type, sessionId)
+      .all<{ target: string }>();
+    return results.map((r) => r.target);
+  }
+
+  async bulkCounts(
+    type: string,
+    min: number,
+    cap: number,
+  ): Promise<AggregateRow[]> {
+    const sql =
+      "SELECT e.target AS target, " +
+      "COUNT(DISTINCT COALESCE(s.user_id, e.session_id)) AS count " +
+      "FROM events e JOIN sessions s ON s.session_id = e.session_id " +
+      "WHERE e.type = ?1 " +
+      "GROUP BY e.target HAVING count >= ?2 " +
+      "ORDER BY count DESC, e.target ASC LIMIT ?3";
+    const { results } = await this.db
+      .prepare(sql)
+      .bind(type, min, cap)
+      .all<{ target: string; count: number }>();
+    return results.map((r) => ({ target: r.target, count: r.count }));
+  }
+
   async linkSessions(
     sessionIds: string[],
     userId: string,

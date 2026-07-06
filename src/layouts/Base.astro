@@ -3,6 +3,7 @@ import "../styles/global.css";
 import SearchPalette from "../components/SearchPalette.astro";
 import ApolloConsent from "../components/ApolloConsent.astro";
 import ContributeBanner from "../components/ContributeBanner.astro";
+import FavoritesController from "../components/FavoritesController.astro";
 
 interface Props {
   title: string;
@@ -43,6 +44,9 @@ const UMAMI_SRC =
 // loaded freely outside consent-required jurisdictions, and only after explicit
 // consent within the EU/EEA/UK. Disclosed in /privacy and /terms.
 const APOLLO_APP_ID = import.meta.env.PUBLIC_APOLLO_APP_ID ?? "";
+
+// Favorites surface is build-time gated on the engagement endpoint being configured.
+const ENGAGEMENT_ON = Boolean(import.meta.env.PUBLIC_ENGAGEMENT_ENDPOINT);
 
 // Feedback form (Google Forms) — the MakerPerks Feedback form.
 const FEEDBACK_FORM_URL =
@@ -121,6 +125,27 @@ const FEEDBACK_FORM_URL =
             <kbd class="site-search__kbd" aria-hidden="true">⌘K</kbd>
           </button>
           <a href="/#personas">Browse</a>
+          {
+            ENGAGEMENT_ON && (
+              <a href="/favorites" class="site-nav__saved">
+                <svg
+                  width="15"
+                  height="15"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path d="M12 21.1 10.55 19.8C5.4 15.16 2 12.08 2 8.25 2 5.42 4.24 3.2 7.05 3.2c1.59 0 3.13.74 4.13 1.92l.82.96.82-.96A5.46 5.46 0 0 1 16.95 3.2C19.76 3.2 22 5.42 22 8.25c0 3.83-3.4 6.91-8.55 11.56L12 21.1Z" />
+                </svg>
+                Saved
+                <span class="site-nav__saved-count tnum" data-fav-nav-count />
+              </a>
+            )
+          }
           <a href="/agents">For agents</a>
           <a href="/contribute" class="site-nav__cta">
             <svg
@@ -148,6 +173,8 @@ const FEEDBACK_FORM_URL =
 
     <SearchPalette />
 
+    {ENGAGEMENT_ON && <FavoritesController />}
+
     <footer class="site-foot">
       <div class="container site-foot__inner">
         <p class="site-foot__tagline">
@@ -158,6 +185,7 @@ const FEEDBACK_FORM_URL =
           <a href={FEEDBACK_FORM_URL} target="_blank" rel="noopener">Feedback</a
           >
           <a href="/agents">For agents</a>
+          {ENGAGEMENT_ON && <a href="/favorites">Saved</a>}
           <a href="/privacy">Privacy Policy</a>
           <a href="/terms">Terms of Use</a>
           <a href="/perks.json">perks.json</a>
@@ -305,6 +333,26 @@ const FEEDBACK_FORM_URL =
       }
       .site-nav__cta:hover {
         border-color: var(--green);
+      }
+      .site-nav__saved {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.3rem;
+      }
+      .site-nav__saved svg {
+        flex: none;
+      }
+      /* The count badge only renders once JS fills it (empty = no chrome). */
+      .site-nav__saved-count:not(:empty) {
+        min-width: 1.1rem;
+        padding: 0 0.32rem;
+        border-radius: 999px;
+        background: var(--green-tint);
+        color: var(--green-ink);
+        font-size: var(--fs-xs);
+        font-weight: 600;
+        line-height: 1.35;
+        text-align: center;
       }
       @media (max-width: 36rem) {
         .site-nav a:not(.site-nav__cta) {

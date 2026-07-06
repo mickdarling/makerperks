@@ -1,0 +1,104 @@
+---
+/**
+ * Save (favorite) toggle — a heart. Rendered only when engagement is configured
+ * (the caller gates on PUBLIC_ENGAGEMENT_ENDPOINT). State + clicks are hydrated by
+ * FavoritesController; this component is just the on-brand control + its states.
+ *
+ * Toggle-button pattern: stable accessible name + aria-pressed carries saved state.
+ */
+interface Props {
+  /** Program id, e.g. "vercel/vercel-for-startups". */
+  target: string;
+  /** Perk title, for the accessible name. */
+  label: string;
+  variant?: "card" | "detail";
+}
+const { target, label, variant = "card" } = Astro.props;
+---
+
+<button
+  type="button"
+  class:list={["fav", `fav--${variant}`]}
+  data-fav={target}
+  aria-pressed="false"
+>
+  <svg class="fav__icon" viewBox="0 0 24 24" aria-hidden="true">
+    <path
+      d="M12 21.1 10.55 19.8C5.4 15.16 2 12.08 2 8.25 2 5.42 4.24 3.2 7.05 3.2c1.59 0 3.13.74 4.13 1.92l.82.96.82-.96A5.46 5.46 0 0 1 16.95 3.2C19.76 3.2 22 5.42 22 8.25c0 3.83-3.4 6.91-8.55 11.56L12 21.1Z"
+    ></path>
+  </svg>
+  <span class="visually-hidden">Save {label}</span>
+</button>
+
+<style>
+  .fav {
+    /* Lift above the card's full-card link overlay so the heart is clickable. */
+    position: relative;
+    z-index: 2;
+    display: grid;
+    place-items: center;
+    flex: none;
+    padding: 0;
+    border: 1px solid transparent;
+    border-radius: 999px;
+    background: transparent;
+    color: var(--ink-muted);
+    cursor: pointer;
+    transition:
+      color 0.16s ease,
+      background-color 0.16s ease,
+      border-color 0.16s ease,
+      transform 0.16s cubic-bezier(0.2, 0.7, 0.2, 1);
+  }
+  .fav--card {
+    width: 1.9rem;
+    height: 1.9rem;
+  }
+  .fav--detail {
+    width: 2.4rem;
+    height: 2.4rem;
+    border-color: var(--hairline);
+    background: var(--paper);
+  }
+  .fav__icon {
+    width: 64%;
+    height: 64%;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.7;
+    stroke-linejoin: round;
+    transition: fill 0.16s ease;
+  }
+  .fav:hover {
+    color: var(--ink);
+    background: var(--surface);
+    border-color: var(--hairline);
+  }
+  .fav:active {
+    transform: scale(0.9);
+  }
+  .fav[aria-pressed="true"] {
+    color: var(--heart-deep);
+  }
+  .fav[aria-pressed="true"] .fav__icon {
+    fill: var(--heart);
+    stroke: var(--heart-deep);
+  }
+  /* Pop only on a deliberate save (class added by the controller), never on load. */
+  @media (prefers-reduced-motion: no-preference) {
+    .fav--pop .fav__icon {
+      animation: fav-pop 0.22s cubic-bezier(0.2, 0.7, 0.2, 1);
+    }
+  }
+  @keyframes fav-pop {
+    0% {
+      transform: scale(1);
+    }
+    45% {
+      transform: scale(1.28);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+</style>

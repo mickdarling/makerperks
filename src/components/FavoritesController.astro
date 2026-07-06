@@ -1,0 +1,74 @@
+---
+/**
+ * Client controller for the favorites surface. Renders no markup — it ships the
+ * script that hydrates every Save heart, the popularity counts, and the "Saved" nav
+ * count. Included once by Base.astro, only when engagement is configured.
+ */
+---
+
+<script>
+  import {
+    isEngagementEnabled,
+    isFavorited,
+    toggleFavorite,
+    getFavorites,
+    loadCounts,
+    onCountsUpdate,
+  } from "../lib/engagement";
+
+  if (isEngagementEnabled()) {
+    // --- "Saved (N)" nav count ---
+    const updateNavCount = () => {
+      const el = document.querySelector<HTMLElement>("[data-fav-nav-count]");
+      if (el) {
+        const n = getFavorites().length;
+        el.textContent = n > 0 ? String(n) : "";
+      }
+    };
+
+    // --- Save hearts (cards + detail page) ---
+    const hearts = document.querySelectorAll<HTMLButtonElement>("[data-fav]");
+    for (const btn of hearts) {
+      const target = btn.dataset.fav!;
+      btn.setAttribute("aria-pressed", String(isFavorited(target)));
+      btn.addEventListener("click", async (event) => {
+        // The card is a full-card link; keep a heart click from navigating.
+        event.preventDefault();
+        event.stopPropagation();
+        const saved = await toggleFavorite(target);
+        btn.setAttribute("aria-pressed", String(saved));
+        if (saved) {
+          btn.classList.add("fav--pop");
+          btn.addEventListener(
+            "animationend",
+            () => btn.classList.remove("fav--pop"),
+            { once: true },
+          );
+        }
+        updateNavCount();
+      });
+    }
+    updateNavCount();
+
+    // --- Popularity counts (detail pages) — bucketed, threshold-gated ---
+    const buckets = [1000, 500, 250, 100, 50, 25, 10];
+    const bucket = (n: number) => buckets.find((b) => n >= b) ?? n;
+    const countEls = document.querySelectorAll<HTMLElement>("[data-fav-count]");
+    if (countEls.length) {
+      const render = (counts: Record<string, number>) => {
+        for (const el of countEls) {
+          const n = counts[el.dataset.favCount!];
+          const out = el.querySelector<HTMLElement>("[data-fav-count-n]");
+          if (typeof n === "number" && n > 0 && out) {
+            out.textContent = String(bucket(n));
+            el.hidden = false;
+          } else {
+            el.hidden = true;
+          }
+        }
+      };
+      render(loadCounts()); // cache first (may be empty → stays hidden)
+      onCountsUpdate(render); // then revalidated counts, in place
+    }
+  }
+</script>

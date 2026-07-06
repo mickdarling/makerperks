@@ -54,6 +54,36 @@ export function validateAggregateQuery(
   return { ok: true, value: { targets: [...new Set(targets)], type } };
 }
 
+/** Default cap on how many targets the bulk counts read returns. */
+export const COUNTS_CAP = 1000;
+
+/** Validate the GET /mine query (a session + a single known type). */
+export function validateMineQuery(
+  session: string | null,
+  type: string | null,
+  knownTypes: Set<string>,
+): Valid<{ session: string; type: string }> {
+  if (session === null || !SESSION_RE.test(session))
+    return { ok: false, error: "invalid session" };
+  if (type === null || !knownTypes.has(type))
+    return { ok: false, error: "unknown event type" };
+  return { ok: true, value: { session, type } };
+}
+
+/** Validate the GET /counts query (a known type + an integer min >= 1). */
+export function validateCountsQuery(
+  type: string | null,
+  minRaw: string | null,
+  knownTypes: Set<string>,
+): Valid<{ type: string; min: number }> {
+  if (type === null || !knownTypes.has(type))
+    return { ok: false, error: "unknown event type" };
+  const min = Number(minRaw ?? "1");
+  if (!Number.isInteger(min) || min < 1)
+    return { ok: false, error: "min must be an integer >= 1" };
+  return { ok: true, value: { type, min } };
+}
+
 /** Parse a comma-separated env list into a Set, dropping blanks. */
 export function parseTypeSet(csv: string | undefined): Set<string> {
   return new Set(

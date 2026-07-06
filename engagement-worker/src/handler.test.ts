@@ -232,3 +232,150 @@ test("forward-compat: linking sessions to one account collapses the count (eleva
   await deps.store.linkSessions([SID_A, SID_B], "user_42", deps.now());
   assert.equal(await countOf(deps, T1), 1); // now one identity
 });
+
+const SID_C = "s_" + "c".repeat(32);
+
+function deleteEvent(
+  body: Record<string, unknown>,
+  headers: Record<string, string> = {},
+): Request {
+  return new Request("https://api.test/event", {
+    method: "DELETE",
+    headers: {
+      origin: ORIGIN,
+      "user-agent": UA,
+      "content-type": "application/json",
+      ...headers,
+    },
+    body: JSON.stringify(body),
+  });
+}
+
+function getReq(path: string): Request {
+  return new Request(`https://api.test${path}`, {
+    headers: { origin: ORIGIN, "user-agent": UA },
+  });
+}
+
+test("unfavorite removes the event and drops it from the aggregate", async () => {
+  const deps = makeDeps();
+  await handleRequest(
+    postEvent({ session: SID_A, target: T1, type: "favorite" }),
+    deps,
+  );
+  assert.equal(await countOf(deps, T1), 1);
+
+  const del = await handleRequest(
+    deleteEvent({ session: SID_A, target: T1, type: "favorite" }),
+    deps,
+  );
+  assert.equal(del.status, 200);
+  assert.deepEqual(await del.json(), { ok: true });
+  assert.equal(await countOf(deps, T1), 0);
+});
+
+test("unfavorite is idempotent (removing an absent event is a no-op)", async () => {
+  const deps = makeDeps();
+  const del = await handleRequest(
+    deleteEvent({ session: SID_A, target: T1, type: "favorite" }),
+    deps,
+  );
+  assert.equal(del.status, 200);
+});
+
+test("DELETE /event is bot- and rate-gated", async () => {
+  const bot = await handleRequest(
+    deleteEvent(
+      { session: SID_A, target: T1, type: "favorite" },
+      { "user-agent": "python-requests/2" },
+    ),
+    makeDeps(),
+  );
+  assert.equal(bot.status, 403);
+  const limited = await handleRequest(
+    deleteEvent({ session: SID_A, target: T1, type: "favorite" }),
+    makeDeps({ ipLimiter: deny }),
+  );
+  assert.equal(limited.status, 429);
+});
+
+test("GET /mine lists the session's targets, scoped to that session", async () => {
+  const deps = makeDeps();
+  await handleRequest(
+    postEvent({ session: SID_A, target: T1, type: "favorite" }),
+    deps,
+  );
+  await handleRequest(
+    postEvent({ session: SID_A, target: T2, type: "favorite" }),
+    deps,
+  );
+  const res = await handleRequest(
+    getReq(`/mine?type=favorite&session=${SID_A}`),
+    deps,
+  );
+  const { type, targets } = (await res.json()) as {
+    type: string;
+    targets: string[];
+  };
+  assert.equal(type, "favorite");
+  assert.deepEqual([...targets].sort(), [T1, T2].sort());
+
+  const empty = await handleRequest(
+    getReq(`/mine?type=favorite&session=${SID_B}`),
+    deps,
+  );
+  assert.deepEqual(((await empty.json()) as { targets: string[] }).targets, []);
+});
+
+test("GET /mine resolves by owner after linking", async () => {
+  const deps = makeDeps();
+  await handleRequest(
+    postEvent({ session: SID_A, target: T1, type: "favorite" }),
+    deps,
+  );
+  await handleRequest(
+    postEvent({ session: SID_B, target: T2, type: "favorite" }),
+    deps,
+  );
+  await deps.store.linkSessions([SID_A, SID_B], "user_77", deps.now());
+  const res = await handleRequest(
+    getReq(`/mine?type=favorite&session=${SID_A}`),
+    deps,
+  );
+  const { targets } = (await res.json()) as { targets: string[] };
+  assert.deepEqual([...targets].sort(), [T1, T2].sort());
+});
+
+test("GET /counts returns only at-or-above-min targets, cached", async () => {
+  const deps = makeDeps();
+  for (const s of [SID_A, SID_B, SID_C])
+    await handleRequest(
+      postEvent({ session: s, target: T1, type: "favorite" }),
+      deps,
+    ); // T1 saved by 3
+  await handleRequest(
+    postEvent({ session: SID_A, target: T2, type: "favorite" }),
+    deps,
+  ); // T2 saved by 1
+
+  const res = await handleRequest(getReq(`/counts?type=favorite&min=2`), deps);
+  assert.match(res.headers.get("cache-control") ?? "", /max-age/);
+  const body = (await res.json()) as {
+    type: string;
+    min: number;
+    counts: Record<string, number>;
+  };
+  assert.deepEqual(body, { type: "favorite", min: 2, counts: { [T1]: 3 } }); // T2 excluded
+});
+
+test("GET /counts rejects bad query", async () => {
+  const deps = makeDeps();
+  assert.equal(
+    (await handleRequest(getReq(`/counts?type=bogus&min=1`), deps)).status,
+    400,
+  );
+  assert.equal(
+    (await handleRequest(getReq(`/counts?type=favorite&min=0`), deps)).status,
+    400,
+  );
+});

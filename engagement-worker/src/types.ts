@@ -35,6 +35,24 @@ export interface EngagementStore {
   aggregate(targets: string[], type: string): Promise<AggregateRow[]>;
 
   /**
+   * Idempotently remove a session's own event keyed by (session, target, type).
+   * Removing an absent event is a no-op (no error).
+   */
+  removeEvent(sessionId: string, target: string, type: string): Promise<void>;
+
+  /**
+   * The distinct targets this session's OWNER has engaged for a type (owner-resolved,
+   * so a linked account spans its sessions). Targets only — no identifiers.
+   */
+  listBySession(sessionId: string, type: string): Promise<string[]>;
+
+  /**
+   * Every target whose owner-deduped count is >= `min`, for a type, highest first and
+   * capped at `cap`. Targets below `min` are never returned (server-side threshold).
+   */
+  bulkCounts(type: string, min: number, cap: number): Promise<AggregateRow[]>;
+
+  /**
    * Account-elevation seam (dormant until `identity-optional`): link one or more
    * sessions to a single owner. Idempotent; never rewrites events — only sets
    * `sessions.user_id`, so every existing event re-resolves to the new owner.

@@ -20,6 +20,14 @@ export const GET: APIRoute = async ({ site }) => {
   );
   const programs = await getPublishedPrograms();
 
+  // Live popularity is served by the engagement Worker, never baked into this file
+  // (counts are client-side + cached). Only advertise it when configured.
+  const engagementBase = (
+    import.meta.env.PUBLIC_ENGAGEMENT_ENDPOINT ?? ""
+  ).replace(/\/$/, "");
+  const countMin =
+    Math.floor(Number(import.meta.env.PUBLIC_FAVORITES_COUNT_MIN)) || 10;
+
   const lines: string[] = [
     "# MakerPerks",
     "",
@@ -38,6 +46,18 @@ export const GET: APIRoute = async ({ site }) => {
     "- Connect: `claude mcp add --transport http makerperks https://mcp.makerperks.com/mcp`",
     "",
   ];
+
+  if (engagementBase) {
+    lines.push(
+      "## For agents: live popularity",
+      "",
+      "Favorite counts are deduplicated by identity and served live (never baked into this",
+      "file). Targets below the display threshold are omitted by the endpoint:",
+      "",
+      `- Popular perks (saved by ${countMin}+): ${engagementBase}/counts?type=favorite&min=${countMin}`,
+      "",
+    );
+  }
 
   for (const audience of AUDIENCES as readonly Audience[]) {
     const items = forAudience(programs, audience);

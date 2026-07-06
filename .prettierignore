@@ -8,3 +8,6 @@ src/content/providers/
 openspec/
 .impeccable/
 *.log
+# Vendored skill/plugin tooling (e.g. the impeccable design skill) — not project source.
+.claude/skills/
+.github/skills/

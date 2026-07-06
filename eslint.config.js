@@ -12,6 +12,8 @@ export default [
       "mcp-worker/",
       "worker/",
       "engagement-worker/",
+      ".claude/skills/",
+      ".github/skills/",
     ],
   },
   js.configs.recommended,
