@@ -40,3 +40,6 @@ pnpm-debug.log*
 .github/skills/
 .github/hooks/
 
+
+# Private keys (e.g. the makerperks-bot GitHub App key used for worker setup)
+*.pem
