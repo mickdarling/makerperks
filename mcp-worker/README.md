@@ -27,6 +27,20 @@ accounts, no mutating tools.
 | `list_personas`     | —                                                               | personas + per-persona counts |
 | `list_categories`   | —                                                               | tags + frequencies            |
 
+### Accelerators dataset
+
+The same worker also serves the accelerators directory
+([`datasets/accelerators/accelerators.json`](../datasets/accelerators/README.md),
+perks.json-family schema). Loaded independently of perks — if one dataset is
+unreachable the other's tools keep working. `fit`/`fit_note` are relative to the
+dataset maintainer's founder profile; treat them as advisory.
+
+| Tool                  | Args                                                                                              | Returns                                       |
+| --------------------- | ------------------------------------------------------------------------------------------------- | --------------------------------------------- |
+| `search_accelerators` | `query?`, `category?`, `format?`, `region?`, `non_dilutive?`, `min_value?`, `include_inactive?`, `limit?` | matching programs, value-sorted (Active only by default) |
+| `get_accelerator`     | `slug` (e.g. `ignition/ai-accelerator-singapore`)                                                  | one full record                               |
+| `upcoming_deadlines`  | `within_days?` (default 60), `include_rolling?` (default true)                                     | dated deadlines soonest-first + rolling programs |
+
 ## Connect
 
 ```sh
