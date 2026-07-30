@@ -6,6 +6,9 @@ compatibility_flags = ["nodejs_compat"]
 # Source of truth: the published static dataset. Override per environment if needed.
 [vars]
 PERKS_JSON_URL = "https://www.makerperks.com/perks.json"
+# The accelerators dataset is not in the site build yet; served from the repo until
+# the site publishes /accelerators.json (then switch this URL).
+ACCELERATORS_JSON_URL = "https://raw.githubusercontent.com/mickdarling/makerperks/main/datasets/accelerators/accelerators.json"
 
 # McpAgent persists each client session in a Durable Object (SQLite-backed).
 [[durable_objects.bindings]]
