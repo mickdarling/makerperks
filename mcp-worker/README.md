@@ -32,8 +32,7 @@ accounts, no mutating tools.
 The same worker also serves the accelerators directory
 ([`datasets/accelerators/accelerators.json`](../datasets/accelerators/README.md),
 perks.json-family schema). Loaded independently of perks — if one dataset is
-unreachable the other's tools keep working. `fit`/`fit_note` are relative to the
-dataset maintainer's founder profile; treat them as advisory.
+unreachable the other's tools keep working.
 
 | Tool                  | Args                                                                                              | Returns                                       |
 | --------------------- | ------------------------------------------------------------------------------------------------- | --------------------------------------------- |
