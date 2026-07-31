@@ -110,8 +110,6 @@ interface Accelerator {
   deadline_note: string | null;
   eligibility: string;
   status: string;
-  fit: string;
-  fit_note: string;
   sources: string[];
   verified: string;
 }
@@ -331,7 +329,7 @@ export class MakerPerksMCP extends McpAgent<Env> {
       "search_accelerators",
       {
         description:
-          "Search the accelerators/incubators/founder-programs directory. All filters optional and combinable: free-text query (title, provider, slug, tag, location), category, format, region, non-dilutive-only, and minimum program value (USD). Active programs only unless include_inactive is set. Sorted by value, highest first. Note: fit/fit_note fields are relative to the dataset maintainer's founder profile — advisory, not universal.",
+          "Search the accelerators/incubators/founder-programs directory. All filters optional and combinable: free-text query (title, provider, slug, tag, location), category, format, region, non-dilutive-only, and minimum program value (USD). Active programs only unless include_inactive is set. Sorted by value, highest first.",
         inputSchema: {
           query: z
             .string()
