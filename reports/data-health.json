@@ -1,11 +1,11 @@
 {
-  "generated": "2026-06-28",
+  "generated": "2026-09-07",
   "stale_days": 120,
   "counts": {
     "programs": 208,
     "urls_checked": 307,
-    "broken": 50,
-    "redirected": 16,
+    "broken": 53,
+    "redirected": 19,
     "unknown": 33,
     "stale": 186
   },
@@ -45,28 +45,28 @@
       "title": "Akamai Cloud Rise Startup Program",
       "type": "unknown",
       "url": "https://www.linode.com/linode-for-startups/",
-      "code": 0,
-      "finalUrl": null,
+      "code": 403,
+      "finalUrl": "https://www.akamai.com/cloud/start-ups/rise",
       "verified": "2025-10-20",
       "file": "src/content/programs/akamai/rise.yaml"
     },
     {
       "slug": "akamai/rise",
       "title": "Akamai Cloud Rise Startup Program",
-      "type": "unknown",
+      "type": "broken",
       "url": "https://www.linode.com/signup",
-      "code": 0,
-      "finalUrl": null,
+      "code": 404,
+      "finalUrl": "https://www.linode.com/signup/",
       "verified": "2025-10-20",
       "file": "src/content/programs/akamai/rise.yaml"
     },
     {
       "slug": "akamai/rise",
       "title": "Akamai Cloud Rise Startup Program",
-      "type": "unknown",
+      "type": "broken",
       "url": "https://www.linode.com/rise",
-      "code": 0,
-      "finalUrl": null,
+      "code": 404,
+      "finalUrl": "https://www.linode.com/rise/",
       "verified": "2025-10-20",
       "file": "src/content/programs/akamai/rise.yaml"
     },
@@ -99,6 +99,16 @@
       "finalUrl": null,
       "verified": "2025-10-20",
       "file": "src/content/programs/algolia/algolia-startup-program.yaml"
+    },
+    {
+      "slug": "ansys/ansys-startup-program",
+      "title": "Ansys Startup Program",
+      "type": "redirected",
+      "url": "https://www.ansys.com/startup-program",
+      "code": 200,
+      "finalUrl": "https://ansys.synopsys.com/startup-program",
+      "verified": "2025-10-20",
+      "file": "src/content/programs/ansys/ansys-startup-program.yaml"
     },
     {
       "slug": "asana/asana-for-startups",
@@ -321,6 +331,16 @@
       "file": "src/content/programs/cockroachdb/cockroachdb-cloud-free-trial.yaml"
     },
     {
+      "slug": "coda/coda-startup-program",
+      "title": "Coda Startup Program",
+      "type": "broken",
+      "url": "https://coda.io/startups",
+      "code": 404,
+      "finalUrl": "https://coda.io/solutions/team-size/startups?utm_source=linkedin&utm_medium=social&utm_content=12-4-2024",
+      "verified": "2025-10-20",
+      "file": "src/content/programs/coda/coda-startup-program.yaml"
+    },
+    {
       "slug": "datadog/datadog-for-startups-program",
       "title": "Datadog for Startups Program",
       "type": "unknown",
@@ -341,14 +361,24 @@
       "file": "src/content/programs/datastax/datastax-astra-db-free-trial.yaml"
     },
     {
-      "slug": "deepgram/deepgram-startup-program",
-      "title": "Deepgram Startup Program",
-      "type": "broken",
-      "url": "https://deepgram.com/signup",
-      "code": 404,
-      "finalUrl": "https://deepgram.com/signup",
+      "slug": "devrev/devrev-for-startups",
+      "title": "DevRev for Startups",
+      "type": "unknown",
+      "url": "https://devrev.ai/startups",
+      "code": 429,
+      "finalUrl": "https://devrev.ai/startups",
       "verified": "2025-10-20",
-      "file": "src/content/programs/deepgram/deepgram-startup-program.yaml"
+      "file": "src/content/programs/devrev/devrev-for-startups.yaml"
+    },
+    {
+      "slug": "devrev/devrev-for-startups",
+      "title": "DevRev for Startups",
+      "type": "unknown",
+      "url": "https://devrev.ai/startups/apply",
+      "code": 429,
+      "finalUrl": "https://devrev.ai/startups/apply",
+      "verified": "2025-10-20",
+      "file": "src/content/programs/devrev/devrev-for-startups.yaml"
     },
     {
       "slug": "digitalocean/digitalocean-200",
@@ -359,6 +389,16 @@
       "finalUrl": "https://cloud.digitalocean.com/registrations/new",
       "verified": "2025-10-20",
       "file": "src/content/programs/digitalocean/digitalocean-200.yaml"
+    },
+    {
+      "slug": "digitalocean/hatch",
+      "title": "Hatch Startup Program",
+      "type": "unknown",
+      "url": "https://cloud.digitalocean.com/registrations/new",
+      "code": 403,
+      "finalUrl": "https://cloud.digitalocean.com/registrations/new",
+      "verified": "2025-10-20",
+      "file": "src/content/programs/digitalocean/hatch.yaml"
     },
     {
       "slug": "elevenlabs/ai-student-pack",
@@ -611,12 +651,22 @@
       "file": "src/content/programs/neon/neon-yc-startup-deal.yaml"
     },
     {
+      "slug": "netcore/netcore-cloud-b2c-startup-program",
+      "title": "Netcore Cloud B2C Startup Program",
+      "type": "redirected",
+      "url": "https://netcorecloud.com/startup-program/",
+      "code": 200,
+      "finalUrl": "https://netcore.ai/startup-program/",
+      "verified": "2025-10-20",
+      "file": "src/content/programs/netcore/netcore-cloud-b2c-startup-program.yaml"
+    },
+    {
       "slug": "notion/notion-for-startups",
       "title": "Notion for Startups",
       "type": "redirected",
       "url": "https://www.notion.so/startups-apply",
       "code": 200,
-      "finalUrl": "https://app.notion.com/startups-apply?__dm_a=1",
+      "finalUrl": "https://app.notion.com/startups-apply",
       "verified": "2025-10-20",
       "file": "src/content/programs/notion/notion-for-startups.yaml"
     },
@@ -691,16 +741,6 @@
       "file": "src/content/programs/perplexity/perplexity-for-startups.yaml"
     },
     {
-      "slug": "phospho/phospho-startup-program-get-2000-ai-builder-credits-for-free-find-pmf-with-your-ai-saas-faster",
-      "title": "Phospho Startup Program: Get $2000 AI Builder Credits for Free (Find PMF with Your AI SaaS Faster)",
-      "type": "unknown",
-      "url": "https://www.phospho.com/startup-program",
-      "code": 0,
-      "finalUrl": null,
-      "verified": "2025-10-20",
-      "file": "src/content/programs/phospho/phospho-startup-program-get-2000-ai-builder-credits-for-free-find-pmf-with-your-ai-saas-faster.yaml"
-    },
-    {
       "slug": "pilot/pilot-for-startups-program",
       "title": "Pilot for Startups Program",
       "type": "broken",
@@ -719,16 +759,6 @@
       "finalUrl": null,
       "verified": "2025-10-20",
       "file": "src/content/programs/playai/playai-education-nonprofit-discount.yaml"
-    },
-    {
-      "slug": "posthog/posthog-for-startups",
-      "title": "PostHog for Startups",
-      "type": "broken",
-      "url": "https://posthog.com/startups",
-      "code": 404,
-      "finalUrl": "https://posthog.com/startups",
-      "verified": "2025-10-20",
-      "file": "src/content/programs/posthog/posthog-for-startups.yaml"
     },
     {
       "slug": "postmark/postmark-bootstrapper-offer",
@@ -761,12 +791,42 @@
       "file": "src/content/programs/redis/redis-startup-program.yaml"
     },
     {
+      "slug": "remote/remote-for-startups-program",
+      "title": "Remote For Startups Program",
+      "type": "broken",
+      "url": "https://remote.com/for-startups",
+      "code": 404,
+      "finalUrl": "https://remote.com/for-startups",
+      "verified": "2025-10-20",
+      "file": "src/content/programs/remote/remote-for-startups-program.yaml"
+    },
+    {
       "slug": "remotepass/remotepass-startup-discount-program",
       "title": "RemotePass Startup Discount Program",
       "type": "broken",
-      "url": "https://www.remotepass.com/signup",
+      "url": "https://www.remotepass.com/startups",
       "code": 404,
-      "finalUrl": "https://www.remotepass.com/signup",
+      "finalUrl": "https://www.remotepass.com/startups",
+      "verified": "2025-10-20",
+      "file": "src/content/programs/remotepass/remotepass-startup-discount-program.yaml"
+    },
+    {
+      "slug": "remotepass/remotepass-startup-discount-program",
+      "title": "RemotePass Startup Discount Program",
+      "type": "broken",
+      "url": "https://www.remotepass.com/startups#apply",
+      "code": 404,
+      "finalUrl": "https://www.remotepass.com/startups",
+      "verified": "2025-10-20",
+      "file": "src/content/programs/remotepass/remotepass-startup-discount-program.yaml"
+    },
+    {
+      "slug": "remotepass/remotepass-startup-discount-program",
+      "title": "RemotePass Startup Discount Program",
+      "type": "broken",
+      "url": "https://www.remotepass.com/startups#verification",
+      "code": 404,
+      "finalUrl": "https://www.remotepass.com/startups",
       "verified": "2025-10-20",
       "file": "src/content/programs/remotepass/remotepass-startup-discount-program.yaml"
     },
@@ -903,10 +963,10 @@
     {
       "slug": "twentysix/twentysix-cloud-acceleratooor-web3-startup-program",
       "title": "Twentysix Cloud Acceleratooor Web3 Startup Program",
-      "type": "unknown",
+      "type": "redirected",
       "url": "https://www.twentysix.cloud/acceleratooor/",
-      "code": 0,
-      "finalUrl": null,
+      "code": 200,
+      "finalUrl": "https://aleph.cloud/acceleratooor/",
       "verified": "2025-10-20",
       "file": "src/content/programs/twentysix/twentysix-cloud-acceleratooor-web3-startup-program.yaml"
     },
@@ -943,30 +1003,30 @@
     {
       "slug": "vultr/vip-digital-startup-program",
       "title": "VIP Digital Startup Program",
-      "type": "broken",
+      "type": "unknown",
       "url": "https://www.vultr.com/digital-startup-program",
-      "code": 404,
+      "code": 403,
       "finalUrl": "https://www.vultr.com/digital-startup-program",
       "verified": "2025-10-20",
       "file": "src/content/programs/vultr/vip-digital-startup-program.yaml"
     },
     {
-      "slug": "webflow/webflow-for-startups-program",
-      "title": "Webflow for Startups Program",
+      "slug": "vultr/vultr-250-free-credit-program",
+      "title": "Vultr $250 Free Credit Program",
       "type": "unknown",
-      "url": "http://www.webflow.com/startups/startups-application",
-      "code": 0,
-      "finalUrl": null,
+      "url": "https://www.vultr.com",
+      "code": 403,
+      "finalUrl": "https://www.vultr.com/",
       "verified": "2025-10-20",
-      "file": "src/content/programs/webflow/webflow-for-startups-program.yaml"
+      "file": "src/content/programs/vultr/vultr-250-free-credit-program.yaml"
     },
     {
       "slug": "webflow/webflow-for-startups-program",
       "title": "Webflow for Startups Program",
       "type": "unknown",
       "url": "http://webflow.com/startups/partner-application",
-      "code": 0,
-      "finalUrl": null,
+      "code": 403,
+      "finalUrl": "https://help.webflow.com/hc/en-us/articles/33961217659923-How-to-redeem-your-Webflow-for-startups-discount",
       "verified": "2025-10-20",
       "file": "src/content/programs/webflow/webflow-for-startups-program.yaml"
     },
@@ -1006,1302 +1066,1302 @@
       "slug": "0x/0x-jumpstart-program",
       "title": "0x JumpStart Program",
       "verified": "2025-10-20",
-      "ageDays": 252,
+      "ageDays": 322,
       "file": "src/content/programs/0x/0x-jumpstart-program.yaml"
     },
     {
       "slug": "1password/1password-for-open-source",
       "title": "1Password for Open Source",
       "verified": "2025-10-20",
-      "ageDays": 252,
+      "ageDays": 322,
       "file": "src/content/programs/1password/1password-for-open-source.yaml"
     },
     {
       "slug": "adaline/adaline-api-credits-program",
       "title": "Adaline API Credits Program",
       "verified": "2025-10-20",
-      "ageDays": 252,
+      "ageDays": 322,
       "file": "src/content/programs/adaline/adaline-api-credits-program.yaml"
     },
     {
       "slug": "airbyte/airbyte-y-combinator-startup-program",
       "title": "Airbyte Y Combinator Startup Program",
       "verified": "2025-10-20",
-      "ageDays": 252,
+      "ageDays": 322,
       "file": "src/content/programs/airbyte/airbyte-y-combinator-startup-program.yaml"
     },
     {
       "slug": "airtable/airtable-for-startups",
       "title": "Airtable for Startups",
       "verified": "2025-10-20",
-      "ageDays": 252,
+      "ageDays": 322,
       "file": "src/content/programs/airtable/airtable-for-startups.yaml"
     },
     {
       "slug": "aiven/aiven-cluster-startup-program",
       "title": "Aiven Cluster Startup Program",
       "verified": "2025-10-20",
-      "ageDays": 252,
+      "ageDays": 322,
       "file": "src/content/programs/aiven/aiven-cluster-startup-program.yaml"
     },
     {
       "slug": "akamai/free-trial-100",
       "title": "Akamai $100 Free Trial & Business Credits",
       "verified": "2025-10-20",
-      "ageDays": 252,
+      "ageDays": 322,
       "file": "src/content/programs/akamai/free-trial-100.yaml"
     },
     {
       "slug": "akamai/rise",
       "title": "Akamai Cloud Rise Startup Program",
       "verified": "2025-10-20",
-      "ageDays": 252,
+      "ageDays": 322,
       "file": "src/content/programs/akamai/rise.yaml"
     },
     {
       "slug": "alchemy/alchemy-for-startups",
       "title": "Alchemy for Startups",
       "verified": "2025-10-20",
-      "ageDays": 252,
+      "ageDays": 322,
       "file": "src/content/programs/alchemy/alchemy-for-startups.yaml"
     },
     {
       "slug": "algolia/algolia-startup-program",
       "title": "Algolia Startup Program",
       "verified": "2025-10-20",
-      "ageDays": 252,
+      "ageDays": 322,
       "file": "src/content/programs/algolia/algolia-startup-program.yaml"
     },
     {
       "slug": "alibabacloud/alibaba-cloud-startup-catalyst-program",
       "title": "Alibaba Cloud Startup Catalyst Program",
       "verified": "2025-10-20",
-      "ageDays": 252,
+      "ageDays": 322,
       "file": "src/content/programs/alibabacloud/alibaba-cloud-startup-catalyst-program.yaml"
     },
     {
       "slug": "amplitude/amplitude-for-startups",
       "title": "Amplitude for Startups",
       "verified": "2025-10-20",
-      "ageDays": 252,
+      "ageDays": 322,
       "file": "src/content/programs/amplitude/amplitude-for-startups.yaml"
     },
     {
       "slug": "ansys/ansys-startup-program",
       "title": "Ansys Startup Program",
       "verified": "2025-10-20",
-      "ageDays": 252,
+      "ageDays": 322,
       "file": "src/content/programs/ansys/ansys-startup-program.yaml"
     },
     {
       "slug": "apollo/apollo-for-startups",
       "title": "Apollo for Startups",
       "verified": "2025-10-20",
-      "ageDays": 252,
+      "ageDays": 322,
       "file": "src/content/programs/apollo/apollo-for-startups.yaml"
     },
     {
       "slug": "appwrite/appwrite-startups-program",
       "title": "Appwrite Startups Program",
       "verified": "2025-10-20",
-      "ageDays": 252,
+      "ageDays": 322,
       "file": "src/content/programs/appwrite/appwrite-startups-program.yaml"
     },
     {
       "slug": "asana/asana-for-startups",
       "title": "Asana for Startups",
       "verified": "2025-10-20",
-      "ageDays": 252,
+      "ageDays": 322,
       "file": "src/content/programs/asana/asana-for-startups.yaml"
     },
     {
       "slug": "assemblyai/assemblyai-startup-program",
       "title": "AssemblyAI Startup Program",
       "verified": "2025-10-20",
-      "ageDays": 252,
+      "ageDays": 322,
       "file": "src/content/programs/assemblyai/assemblyai-startup-program.yaml"
     },
     {
       "slug": "atlassian/atlassian-for-startups",
       "title": "Atlassian for Startups",
       "verified": "2025-10-20",
-      "ageDays": 252,
+      "ageDays": 322,
       "file": "src/content/programs/atlassian/atlassian-for-startups.yaml"
     },
     {
       "slug": "attio/attio-startup-program",
       "title": "Attio Startup Program",
       "verified": "2025-10-20",
-      "ageDays": 252,
+      "ageDays": 322,
       "file": "src/content/programs/attio/attio-startup-program.yaml"
     },
     {
       "slug": "auth0/auth0-startup-program",
       "title": "Auth0 Startup Program",
       "verified": "2025-10-20",
-      "ageDays": 252,
+      "ageDays": 322,
       "file": "src/content/programs/auth0/auth0-startup-program.yaml"
     },
     {
       "slug": "autodesk/autodesk-fusion-for-startups",
       "title": "Autodesk Fusion for Startups",
       "verified": "2025-10-20",
-      "ageDays": 252,
+      "ageDays": 322,
       "file": "src/content/programs/autodesk/autodesk-fusion-for-startups.yaml"
     },
     {
       "slug": "aws/aws-activate",
       "title": "AWS Activate",
       "verified": "2025-10-20",
-      "ageDays": 252,
+      "ageDays": 322,
       "file": "src/content/programs/aws/aws-activate.yaml"
     },
     {
       "slug": "aws/aws-rapid-ramp-credits",
       "title": "AWS Rapid Ramp Credits",
       "verified": "2025-10-20",
-      "ageDays": 252,
+      "ageDays": 322,
       "file": "src/content/programs/aws/aws-rapid-ramp-credits.yaml"
     },
     {
       "slug": "azure/azure-200",
       "title": "Azure $200 Trial",
       "verified": "2025-10-20",
-      "ageDays": 252,
+      "ageDays": 322,
       "file": "src/content/programs/azure/azure-200.yaml"
     },
     {
       "slug": "azure/microsoft-for-startups",
       "title": "Microsoft for Startups (Founders Hub)",
       "verified": "2025-10-20",
-      "ageDays": 252,
+      "ageDays": 322,
       "file": "src/content/programs/azure/microsoft-for-startups.yaml"
     },
     {
       "slug": "beefree/beefree-sdk-startup-program",
       "title": "Beefree SDK Startup Program",
       "verified": "2025-10-20",
-      "ageDays": 252,
+      "ageDays": 322,
       "file": "src/content/programs/beefree/beefree-sdk-startup-program.yaml"
     },
     {
       "slug": "blockpi/blockpi-web3-startup-program",
       "title": "BlockPI Web3 Startup Program",
       "verified": "2025-10-20",
-      "ageDays": 252,
+      "ageDays": 322,
       "file": "src/content/programs/blockpi/blockpi-web3-startup-program.yaml"
     },
     {
       "slug": "brevo/brevo-startup-program",
       "title": "Brevo Startup Program",
       "verified": "2025-10-20",
-      "ageDays": 252,
+      "ageDays": 322,
       "file": "src/content/programs/brevo/brevo-startup-program.yaml"
     },
     {
       "slug": "browseai/browse-ai-startup-program",
       "title": "Browse AI Startup Program",
       "verified": "2025-10-20",
-      "ageDays": 252,
+      "ageDays": 322,
       "file": "src/content/programs/browseai/browse-ai-startup-program.yaml"
     },
     {
       "slug": "browserless/free-tier",
       "title": "Browserless Free Tier",
       "verified": "2025-10-20",
-      "ageDays": 252,
+      "ageDays": 322,
       "file": "src/content/programs/browserless/free-tier.yaml"
     },
     {
       "slug": "cacheflow/cacheflow-startup-accelerator-plan",
       "title": "Cacheflow Startup Accelerator Plan",
       "verified": "2025-10-20",
-      "ageDays": 252,
+      "ageDays": 322,
       "file": "src/content/programs/cacheflow/cacheflow-startup-accelerator-plan.yaml"
     },
     {
       "slug": "capture-the-bug/capture-the-bug-startup-program",
       "title": "Capture The Bug Startup Program",
       "verified": "2025-10-20",
-      "ageDays": 252,
+      "ageDays": 322,
       "file": "src/content/programs/capture-the-bug/capture-the-bug-startup-program.yaml"
     },
     {
       "slug": "cerebras/cerebras-free-llm-credits",
       "title": "Cerebras Free LLM Credits",
       "verified": "2025-10-20",
-      "ageDays": 252,
+      "ageDays": 322,
       "file": "src/content/programs/cerebras/cerebras-free-llm-credits.yaml"
     },
     {
       "slug": "cerebras/startup-deal",
       "title": "Cerebras Startup Deal",
       "verified": "2025-10-20",
-      "ageDays": 252,
+      "ageDays": 322,
       "file": "src/content/programs/cerebras/startup-deal.yaml"
     },
     {
       "slug": "chargebee/chargebee-startup-program-billing-foundations-that-unlock-recurring-growth",
       "title": "Chargebee Startup Program: Billing Foundations that Unlock Recurring Growth",
       "verified": "2025-10-20",
-      "ageDays": 252,
+      "ageDays": 322,
       "file": "src/content/programs/chargebee/chargebee-startup-program-billing-foundations-that-unlock-recurring-growth.yaml"
     },
     {
       "slug": "circleci/circleci-open-source-program",
       "title": "CircleCI Open Source Program",
       "verified": "2025-10-20",
-      "ageDays": 252,
+      "ageDays": 322,
       "file": "src/content/programs/circleci/circleci-open-source-program.yaml"
     },
     {
       "slug": "civo/civo-startup-program",
       "title": "Civo Free Trial $250",
       "verified": "2025-10-20",
-      "ageDays": 252,
+      "ageDays": 322,
       "file": "src/content/programs/civo/civo-startup-program.yaml"
     },
     {
       "slug": "clay/free-plan",
       "title": "Clay Free Plan",
       "verified": "2025-10-20",
-      "ageDays": 252,
+      "ageDays": 322,
       "file": "src/content/programs/clay/free-plan.yaml"
     },
     {
       "slug": "clickup/clickup-for-startups",
       "title": "ClickUp for Startups",
       "verified": "2025-10-20",
-      "ageDays": 252,
+      "ageDays": 322,
       "file": "src/content/programs/clickup/clickup-for-startups.yaml"
     },
     {
       "slug": "cloudflare/cloudflare-for-startups",
       "title": "Cloudflare for Startups",
       "verified": "2025-10-20",
-      "ageDays": 252,
+      "ageDays": 322,
       "file": "src/content/programs/cloudflare/cloudflare-for-startups.yaml"
     },
     {
       "slug": "cloudflare/cloudflare-r2-storage-free-tier",
       "title": "Cloudflare R2 Storage Free Tier",
       "verified": "2025-10-20",
-      "ageDays": 252,
+      "ageDays": 322,
       "file": "src/content/programs/cloudflare/cloudflare-r2-storage-free-tier.yaml"
     },
     {
       "slug": "cloudways/cloudways-startup-program",
       "title": "Cloudways Startup Program",
       "verified": "2025-10-20",
-      "ageDays": 252,
+      "ageDays": 322,
       "file": "src/content/programs/cloudways/cloudways-startup-program.yaml"
     },
     {
       "slug": "cloudzy/sunrise-startup-program",
       "title": "Sunrise Startup Program",
       "verified": "2025-10-20",
-      "ageDays": 252,
+      "ageDays": 322,
       "file": "src/content/programs/cloudzy/sunrise-startup-program.yaml"
     },
     {
       "slug": "cockroachdb/cockroachdb-cloud-free-trial",
       "title": "CockroachDB Cloud Free Trial",
       "verified": "2025-10-20",
-      "ageDays": 252,
+      "ageDays": 322,
       "file": "src/content/programs/cockroachdb/cockroachdb-cloud-free-trial.yaml"
     },
     {
       "slug": "coda/coda-startup-program",
       "title": "Coda Startup Program",
       "verified": "2025-10-20",
-      "ageDays": 252,
+      "ageDays": 322,
       "file": "src/content/programs/coda/coda-startup-program.yaml"
     },
     {
       "slug": "commented/startup-program",
       "title": "Commented Startup Program",
       "verified": "2025-10-20",
-      "ageDays": 252,
+      "ageDays": 322,
       "file": "src/content/programs/commented/startup-program.yaml"
     },
     {
       "slug": "complycube/complycube-startup-program",
       "title": "ComplyCube Startup Program",
       "verified": "2025-10-20",
-      "ageDays": 252,
+      "ageDays": 322,
       "file": "src/content/programs/complycube/complycube-startup-program.yaml"
     },
     {
       "slug": "cursor/cursor-pro-for-students",
       "title": "Cursor Pro for Students",
       "verified": "2025-10-20",
-      "ageDays": 252,
+      "ageDays": 322,
       "file": "src/content/programs/cursor/cursor-pro-for-students.yaml"
     },
     {
       "slug": "customerio/customer-io-startup-program",
       "title": "Customer.io Startup Program",
       "verified": "2025-10-20",
-      "ageDays": 252,
+      "ageDays": 322,
       "file": "src/content/programs/customerio/customer-io-startup-program.yaml"
     },
     {
       "slug": "databento/databento-sign-up-credits",
       "title": "Databento $125 Sign-Up Credits",
       "verified": "2025-10-20",
-      "ageDays": 252,
+      "ageDays": 322,
       "file": "src/content/programs/databento/databento-sign-up-credits.yaml"
     },
     {
       "slug": "databricks/databricks-for-startups-program",
       "title": "Databricks for Startups Program",
       "verified": "2025-10-20",
-      "ageDays": 252,
+      "ageDays": 322,
       "file": "src/content/programs/databricks/databricks-for-startups-program.yaml"
     },
     {
       "slug": "datadog/datadog-for-startups-program",
       "title": "Datadog for Startups Program",
       "verified": "2025-10-20",
-      "ageDays": 252,
+      "ageDays": 322,
       "file": "src/content/programs/datadog/datadog-for-startups-program.yaml"
     },
     {
       "slug": "datastax/datastax-astra-db-free-trial",
       "title": "DataStax Astra DB: $300 Free Trial",
       "verified": "2025-10-20",
-      "ageDays": 252,
+      "ageDays": 322,
       "file": "src/content/programs/datastax/datastax-astra-db-free-trial.yaml"
     },
     {
       "slug": "deepgram/deepgram-pricing-startup-credits",
       "title": "Deepgram $200 Free Credits",
       "verified": "2025-10-20",
-      "ageDays": 252,
+      "ageDays": 322,
       "file": "src/content/programs/deepgram/deepgram-pricing-startup-credits.yaml"
     },
     {
       "slug": "deepgram/deepgram-startup-program",
       "title": "Deepgram Startup Program",
       "verified": "2025-10-20",
-      "ageDays": 252,
+      "ageDays": 322,
       "file": "src/content/programs/deepgram/deepgram-startup-program.yaml"
     },
     {
       "slug": "devrev/devrev-for-startups",
       "title": "DevRev for Startups",
       "verified": "2025-10-20",
-      "ageDays": 252,
+      "ageDays": 322,
       "file": "src/content/programs/devrev/devrev-for-startups.yaml"
     },
     {
       "slug": "digitalocean/digitalocean-200",
       "title": "DigitalOcean $200 Free Trial",
       "verified": "2025-10-20",
-      "ageDays": 252,
+      "ageDays": 322,
       "file": "src/content/programs/digitalocean/digitalocean-200.yaml"
     },
     {
       "slug": "digitalocean/digitalocean-open-source-credits",
       "title": "DigitalOcean Open Source Credits",
       "verified": "2025-10-20",
-      "ageDays": 252,
+      "ageDays": 322,
       "file": "src/content/programs/digitalocean/digitalocean-open-source-credits.yaml"
     },
     {
       "slug": "digitalocean/hatch",
       "title": "Hatch Startup Program",
       "verified": "2025-10-20",
-      "ageDays": 252,
+      "ageDays": 322,
       "file": "src/content/programs/digitalocean/hatch.yaml"
     },
     {
       "slug": "elevenlabs/ai-student-pack",
       "title": "AI Student Pack",
       "verified": "2025-10-20",
-      "ageDays": 252,
+      "ageDays": 322,
       "file": "src/content/programs/elevenlabs/ai-student-pack.yaml"
     },
     {
       "slug": "elevenlabs/elevenlabs-grants",
       "title": "ElevenLabs 3-Month Free Business-Tier",
       "verified": "2025-10-20",
-      "ageDays": 252,
+      "ageDays": 322,
       "file": "src/content/programs/elevenlabs/elevenlabs-grants.yaml"
     },
     {
       "slug": "estuary-flow/estuary-flow-startup-program",
       "title": "Estuary Flow Startup Program",
       "verified": "2025-10-20",
-      "ageDays": 252,
+      "ageDays": 322,
       "file": "src/content/programs/estuary-flow/estuary-flow-startup-program.yaml"
     },
     {
       "slug": "fireworks/fireworks-ignite-startup-program",
       "title": "Fireworks Ignite Startup Program",
       "verified": "2025-10-20",
-      "ageDays": 252,
+      "ageDays": 322,
       "file": "src/content/programs/fireworks/fireworks-ignite-startup-program.yaml"
     },
     {
       "slug": "fivetran/fivetran-startup-program",
       "title": "Fivetran Startup Program",
       "verified": "2025-10-20",
-      "ageDays": 252,
+      "ageDays": 322,
       "file": "src/content/programs/fivetran/fivetran-startup-program.yaml"
     },
     {
       "slug": "formaloo/formaloo-for-startups",
       "title": "Formaloo for Startups",
       "verified": "2025-10-20",
-      "ageDays": 252,
+      "ageDays": 322,
       "file": "src/content/programs/formaloo/formaloo-for-startups.yaml"
     },
     {
       "slug": "framer/framer-startup-offer",
       "title": "Framer Startup Offer",
       "verified": "2025-10-20",
-      "ageDays": 252,
+      "ageDays": 322,
       "file": "src/content/programs/framer/framer-startup-offer.yaml"
     },
     {
       "slug": "freshworks/freshworks-freshstack-startup-program",
       "title": "Freshworks FreshStack Startup Program",
       "verified": "2025-10-20",
-      "ageDays": 252,
+      "ageDays": 322,
       "file": "src/content/programs/freshworks/freshworks-freshstack-startup-program.yaml"
     },
     {
       "slug": "front/front-for-startups-program",
       "title": "Front for Startups Program",
       "verified": "2025-10-20",
-      "ageDays": 252,
+      "ageDays": 322,
       "file": "src/content/programs/front/front-for-startups-program.yaml"
     },
     {
       "slug": "ganttpro/ganttpro-startup-program",
       "title": "GanttPRO Startup Program",
       "verified": "2025-10-20",
-      "ageDays": 252,
+      "ageDays": 322,
       "file": "src/content/programs/ganttpro/ganttpro-startup-program.yaml"
     },
     {
       "slug": "gcp/0-google-for-startups",
       "title": "Google for Startups Cloud Program",
       "verified": "2025-10-20",
-      "ageDays": 252,
+      "ageDays": 322,
       "file": "src/content/programs/gcp/0-google-for-startups.yaml"
     },
     {
       "slug": "gcp/gcp-300",
       "title": "Google Cloud $300 Trial",
       "verified": "2025-10-20",
-      "ageDays": 252,
+      "ageDays": 322,
       "file": "src/content/programs/gcp/gcp-300.yaml"
     },
     {
       "slug": "gcp/google-ai-startup-program",
       "title": "Google AI Startup Program",
       "verified": "2025-10-20",
-      "ageDays": 252,
+      "ageDays": 322,
       "file": "src/content/programs/gcp/google-ai-startup-program.yaml"
     },
     {
       "slug": "gcp/google-cloud-gen-ai-fast-start-program",
       "title": "Google Cloud Gen AI $1000 Fast-Start Program",
       "verified": "2025-10-20",
-      "ageDays": 252,
+      "ageDays": 322,
       "file": "src/content/programs/gcp/google-cloud-gen-ai-fast-start-program.yaml"
     },
     {
       "slug": "gcp/google-web3-startup-program",
       "title": "Google Cloud Web3 Startup Program",
       "verified": "2025-10-20",
-      "ageDays": 252,
+      "ageDays": 322,
       "file": "src/content/programs/gcp/google-web3-startup-program.yaml"
     },
     {
       "slug": "github/github-for-startups",
       "title": "GitHub for Startups",
       "verified": "2025-10-20",
-      "ageDays": 252,
+      "ageDays": 322,
       "file": "src/content/programs/github/github-for-startups.yaml"
     },
     {
       "slug": "gitlab/gitlab-for-startups",
       "title": "GitLab for Startups",
       "verified": "2025-10-20",
-      "ageDays": 252,
+      "ageDays": 322,
       "file": "src/content/programs/gitlab/gitlab-for-startups.yaml"
     },
     {
       "slug": "googally/google-workspace-promo-code",
       "title": "Google Workspace Promo Code",
       "verified": "2025-10-20",
-      "ageDays": 252,
+      "ageDays": 322,
       "file": "src/content/programs/googally/google-workspace-promo-code.yaml"
     },
     {
       "slug": "googleads/google-ads-new-advertiser-promotion",
       "title": "Google Ads New Advertiser Promotion",
       "verified": "2025-10-20",
-      "ageDays": 252,
+      "ageDays": 322,
       "file": "src/content/programs/googleads/google-ads-new-advertiser-promotion.yaml"
     },
     {
       "slug": "grafana/grafana-startup-program",
       "title": "Grafana Labs Startup Program",
       "verified": "2025-10-20",
-      "ageDays": 252,
+      "ageDays": 322,
       "file": "src/content/programs/grafana/grafana-startup-program.yaml"
     },
     {
       "slug": "growsurf/growsurf-for-startups-program",
       "title": "GrowSurf for Startups Program",
       "verified": "2025-10-20",
-      "ageDays": 252,
+      "ageDays": 322,
       "file": "src/content/programs/growsurf/growsurf-for-startups-program.yaml"
     },
     {
       "slug": "gumlet/gumlet-startup-credits-program",
       "title": "Gumlet Startup Credits Program",
       "verified": "2025-10-20",
-      "ageDays": 252,
+      "ageDays": 322,
       "file": "src/content/programs/gumlet/gumlet-startup-credits-program.yaml"
     },
     {
       "slug": "helpscout/help-scout-for-startups",
       "title": "Help Scout for Startups",
       "verified": "2025-10-20",
-      "ageDays": 252,
+      "ageDays": 322,
       "file": "src/content/programs/helpscout/help-scout-for-startups.yaml"
     },
     {
       "slug": "heroku/heroku-open-source-software-credit-program",
       "title": "Heroku Open Source Software Credit Program",
       "verified": "2025-10-20",
-      "ageDays": 252,
+      "ageDays": 322,
       "file": "src/content/programs/heroku/heroku-open-source-software-credit-program.yaml"
     },
     {
       "slug": "heygen/heygen-for-startups",
       "title": "HeyGen for Startups",
       "verified": "2025-10-20",
-      "ageDays": 252,
+      "ageDays": 322,
       "file": "src/content/programs/heygen/heygen-for-startups.yaml"
     },
     {
       "slug": "hootsuite/hootsuite-nonprofit-discount-hootgiving-program",
       "title": "Hootsuite Nonprofit Discount (HootGiving Program)",
       "verified": "2025-10-20",
-      "ageDays": 252,
+      "ageDays": 322,
       "file": "src/content/programs/hootsuite/hootsuite-nonprofit-discount-hootgiving-program.yaml"
     },
     {
       "slug": "huawei/huawei-cloud-startup-program",
       "title": "Huawei Cloud Startup Program",
       "verified": "2025-10-20",
-      "ageDays": 252,
+      "ageDays": 322,
       "file": "src/content/programs/huawei/huawei-cloud-startup-program.yaml"
     },
     {
       "slug": "hubspot/hubspot-for-startups",
       "title": "HubSpot for Startups",
       "verified": "2025-10-20",
-      "ageDays": 252,
+      "ageDays": 322,
       "file": "src/content/programs/hubspot/hubspot-for-startups.yaml"
     },
     {
       "slug": "ibm/ibm-for-startups",
       "title": "IBM for Startups",
       "verified": "2025-10-20",
-      "ageDays": 252,
+      "ageDays": 322,
       "file": "src/content/programs/ibm/ibm-for-startups.yaml"
     },
     {
       "slug": "influxdata/influxdb-cloud-serverless-offer",
       "title": "InfluxDB $250 Trial",
       "verified": "2025-10-20",
-      "ageDays": 252,
+      "ageDays": 322,
       "file": "src/content/programs/influxdata/influxdb-cloud-serverless-offer.yaml"
     },
     {
       "slug": "instabug/startup-program",
       "title": "Instabug Startup Program",
       "verified": "2025-10-20",
-      "ageDays": 252,
+      "ageDays": 322,
       "file": "src/content/programs/instabug/startup-program.yaml"
     },
     {
       "slug": "intercom/intercom-early-stage-program-for-startups",
       "title": "Intercom Early Stage Program for Startups",
       "verified": "2025-10-20",
-      "ageDays": 252,
+      "ageDays": 322,
       "file": "src/content/programs/intercom/intercom-early-stage-program-for-startups.yaml"
     },
     {
       "slug": "ionq/ionq-research-credits-program",
       "title": "IonQ Research Credits Program",
       "verified": "2025-10-20",
-      "ageDays": 252,
+      "ageDays": 322,
       "file": "src/content/programs/ionq/ionq-research-credits-program.yaml"
     },
     {
       "slug": "jetbrains/jetbrains-startup-program",
       "title": "JetBrains Startup Program",
       "verified": "2025-10-20",
-      "ageDays": 252,
+      "ageDays": 322,
       "file": "src/content/programs/jetbrains/jetbrains-startup-program.yaml"
     },
     {
       "slug": "jotform/nonprofit-education-discount",
       "title": "Jotform Nonprofit & Education Program",
       "verified": "2025-10-20",
-      "ageDays": 252,
+      "ageDays": 322,
       "file": "src/content/programs/jotform/nonprofit-education-discount.yaml"
     },
     {
       "slug": "koyeb/koyeb-startup-program-accelerate-with-credits-for-high-performance-infrastructure",
       "title": "Koyeb Startup Program: Accelerate with Credits for High-Performance Infrastructure",
       "verified": "2025-10-20",
-      "ageDays": 252,
+      "ageDays": 322,
       "file": "src/content/programs/koyeb/koyeb-startup-program-accelerate-with-credits-for-high-performance-infrastructure.yaml"
     },
     {
       "slug": "lamini/lamini-on-demand",
       "title": "Lamini On-Demand",
       "verified": "2025-10-20",
-      "ageDays": 252,
+      "ageDays": 322,
       "file": "src/content/programs/lamini/lamini-on-demand.yaml"
     },
     {
       "slug": "linear/linear-startup-program",
       "title": "Linear Startup Program",
       "verified": "2025-10-20",
-      "ageDays": 252,
+      "ageDays": 322,
       "file": "src/content/programs/linear/linear-startup-program.yaml"
     },
     {
       "slug": "linkedin/linkedin-premium-subscription-offer-for-microsoft-for-startups-founders-hub-members",
       "title": "LinkedIn Premium Subscription Offer for Microsoft for Startups Founders Hub Members",
       "verified": "2025-10-20",
-      "ageDays": 252,
+      "ageDays": 322,
       "file": "src/content/programs/linkedin/linkedin-premium-subscription-offer-for-microsoft-for-startups-founders-hub-members.yaml"
     },
     {
       "slug": "liveagent/liveagent-startup-program",
       "title": "LiveAgent Startup Program",
       "verified": "2025-10-20",
-      "ageDays": 252,
+      "ageDays": 322,
       "file": "src/content/programs/liveagent/liveagent-startup-program.yaml"
     },
     {
       "slug": "llamaindex/llamacloud-free-credits",
       "title": "LlamaCloud Free Credits",
       "verified": "2025-10-20",
-      "ageDays": 252,
+      "ageDays": 322,
       "file": "src/content/programs/llamaindex/llamacloud-free-credits.yaml"
     },
     {
       "slug": "mailchimp/free-plan",
       "title": "Mailchimp Free Plan",
       "verified": "2025-10-20",
-      "ageDays": 252,
+      "ageDays": 322,
       "file": "src/content/programs/mailchimp/free-plan.yaml"
     },
     {
       "slug": "make/make-startup-program",
       "title": "Make Startup Program",
       "verified": "2025-10-20",
-      "ageDays": 252,
+      "ageDays": 322,
       "file": "src/content/programs/make/make-startup-program.yaml"
     },
     {
       "slug": "mathworks/matlab-and-simulink-for-startups-program",
       "title": "MATLAB and Simulink for Startups Program",
       "verified": "2025-10-20",
-      "ageDays": 252,
+      "ageDays": 322,
       "file": "src/content/programs/mathworks/matlab-and-simulink-for-startups-program.yaml"
     },
     {
       "slug": "mem0/mem0-startup-program",
       "title": "Mem0 Startup Program",
       "verified": "2025-10-20",
-      "ageDays": 252,
+      "ageDays": 322,
       "file": "src/content/programs/mem0/mem0-startup-program.yaml"
     },
     {
       "slug": "memberstack/memberstack-discount-programs-memberstack-2-0",
       "title": "Memberstack Discount Programs – Memberstack 2.0",
       "verified": "2025-10-20",
-      "ageDays": 252,
+      "ageDays": 322,
       "file": "src/content/programs/memberstack/memberstack-discount-programs-memberstack-2-0.yaml"
     },
     {
       "slug": "mergify/mergify-startup-program",
       "title": "Mergify Startup Program",
       "verified": "2025-10-20",
-      "ageDays": 252,
+      "ageDays": 322,
       "file": "src/content/programs/mergify/mergify-startup-program.yaml"
     },
     {
       "slug": "meteor-cloud/galaxy-professional-plan",
       "title": "Meteor Cloud Galaxy Professional Plan",
       "verified": "2025-10-20",
-      "ageDays": 252,
+      "ageDays": 322,
       "file": "src/content/programs/meteor-cloud/galaxy-professional-plan.yaml"
     },
     {
       "slug": "miro/miro-startup-program",
       "title": "Miro Startup Program",
       "verified": "2025-10-20",
-      "ageDays": 252,
+      "ageDays": 322,
       "file": "src/content/programs/miro/miro-startup-program.yaml"
     },
     {
       "slug": "mistral/mistral-ai-ambassador-program",
       "title": "Mistral AI Ambassador Program",
       "verified": "2025-10-20",
-      "ageDays": 252,
+      "ageDays": 322,
       "file": "src/content/programs/mistral/mistral-ai-ambassador-program.yaml"
     },
     {
       "slug": "mixpanel/mixpanel-startup-program",
       "title": "Mixpanel Startup Program",
       "verified": "2025-10-20",
-      "ageDays": 252,
+      "ageDays": 322,
       "file": "src/content/programs/mixpanel/mixpanel-startup-program.yaml"
     },
     {
       "slug": "mongodb/mongodb-for-startups",
       "title": "MongoDB for Startups",
       "verified": "2025-10-20",
-      "ageDays": 252,
+      "ageDays": 322,
       "file": "src/content/programs/mongodb/mongodb-for-startups.yaml"
     },
     {
       "slug": "motherduck/motherduck-startup-program",
       "title": "MotherDuck Startup Program",
       "verified": "2025-10-20",
-      "ageDays": 252,
+      "ageDays": 322,
       "file": "src/content/programs/motherduck/motherduck-startup-program.yaml"
     },
     {
       "slug": "murf/murf-startup-incubator-program",
       "title": "Murf Startup Incubator Program",
       "verified": "2025-10-20",
-      "ageDays": 252,
+      "ageDays": 322,
       "file": "src/content/programs/murf/murf-startup-incubator-program.yaml"
     },
     {
       "slug": "mux/mux-for-startups",
       "title": "Mux for Startups",
       "verified": "2025-10-20",
-      "ageDays": 252,
+      "ageDays": 322,
       "file": "src/content/programs/mux/mux-for-startups.yaml"
     },
     {
       "slug": "n8n/n8n-startup-plan",
       "title": "n8n Startup Plan",
       "verified": "2025-10-20",
-      "ageDays": 252,
+      "ageDays": 322,
       "file": "src/content/programs/n8n/n8n-startup-plan.yaml"
     },
     {
       "slug": "namecheap/namecheap-education-program",
       "title": "Namecheap Education Program",
       "verified": "2025-10-20",
-      "ageDays": 252,
+      "ageDays": 322,
       "file": "src/content/programs/namecheap/namecheap-education-program.yaml"
     },
     {
       "slug": "navan/navan-first-active-admin-hotels-promotion",
       "title": "Navan First Active Admin (Hotels) Promotion",
       "verified": "2025-10-20",
-      "ageDays": 252,
+      "ageDays": 322,
       "file": "src/content/programs/navan/navan-first-active-admin-hotels-promotion.yaml"
     },
     {
       "slug": "nebius/nebius-for-startups",
       "title": "Nebius for Startups",
       "verified": "2025-10-20",
-      "ageDays": 252,
+      "ageDays": 322,
       "file": "src/content/programs/nebius/nebius-for-startups.yaml"
     },
     {
       "slug": "neo4j/auradb-free-plan",
       "title": "Neo4j AuraDB Free Plan",
       "verified": "2025-10-20",
-      "ageDays": 252,
+      "ageDays": 322,
       "file": "src/content/programs/neo4j/auradb-free-plan.yaml"
     },
     {
       "slug": "neo4j/neo4j-startup-program",
       "title": "Neo4j Startup Program",
       "verified": "2025-10-20",
-      "ageDays": 252,
+      "ageDays": 322,
       "file": "src/content/programs/neo4j/neo4j-startup-program.yaml"
     },
     {
       "slug": "neon/neon-credits-100",
       "title": "Neon $100 Credits",
       "verified": "2025-10-20",
-      "ageDays": 252,
+      "ageDays": 322,
       "file": "src/content/programs/neon/neon-credits-100.yaml"
     },
     {
       "slug": "neon/neon-yc-startup-deal",
       "title": "Neon YC Startup Deal",
       "verified": "2025-10-20",
-      "ageDays": 252,
+      "ageDays": 322,
       "file": "src/content/programs/neon/neon-yc-startup-deal.yaml"
     },
     {
       "slug": "netcore/netcore-cloud-b2c-startup-program",
       "title": "Netcore Cloud B2C Startup Program",
       "verified": "2025-10-20",
-      "ageDays": 252,
+      "ageDays": 322,
       "file": "src/content/programs/netcore/netcore-cloud-b2c-startup-program.yaml"
     },
     {
       "slug": "netmind/netmind-elevate-program",
       "title": "NetMind Elevate Program",
       "verified": "2025-10-20",
-      "ageDays": 252,
+      "ageDays": 322,
       "file": "src/content/programs/netmind/netmind-elevate-program.yaml"
     },
     {
       "slug": "notion/notion-for-startups",
       "title": "Notion for Startups",
       "verified": "2025-10-20",
-      "ageDays": 252,
+      "ageDays": 322,
       "file": "src/content/programs/notion/notion-for-startups.yaml"
     },
     {
       "slug": "openai/codex-open-source-fund",
       "title": "Codex Open Source Fund",
       "verified": "2025-10-20",
-      "ageDays": 252,
+      "ageDays": 322,
       "file": "src/content/programs/openai/codex-open-source-fund.yaml"
     },
     {
       "slug": "openai/openai-data-sharing-and-complimentary-tokens-program",
       "title": "OpenAI Data Sharing and Complimentary Tokens Program",
       "verified": "2025-10-20",
-      "ageDays": 252,
+      "ageDays": 322,
       "file": "src/content/programs/openai/openai-data-sharing-and-complimentary-tokens-program.yaml"
     },
     {
       "slug": "oracle/oracle-cloud-free-tier",
       "title": "Oracle Cloud Free Tier",
       "verified": "2025-10-20",
-      "ageDays": 252,
+      "ageDays": 322,
       "file": "src/content/programs/oracle/oracle-cloud-free-tier.yaml"
     },
     {
       "slug": "otc/telekom-techboost-program",
       "title": "Open Telekom Cloud TechBoost Program",
       "verified": "2025-10-20",
-      "ageDays": 252,
+      "ageDays": 322,
       "file": "src/content/programs/otc/telekom-techboost-program.yaml"
     },
     {
       "slug": "ovh/ovhcloud-startup-program",
       "title": "OVHcloud Startup Program",
       "verified": "2025-10-20",
-      "ageDays": 252,
+      "ageDays": 322,
       "file": "src/content/programs/ovh/ovhcloud-startup-program.yaml"
     },
     {
       "slug": "pangea/pangea-startup-program",
       "title": "Pangea Startup Program",
       "verified": "2025-10-20",
-      "ageDays": 252,
+      "ageDays": 322,
       "file": "src/content/programs/pangea/pangea-startup-program.yaml"
     },
     {
       "slug": "perplexity/perplexity-for-startups",
       "title": "Perplexity for Startups",
       "verified": "2025-10-20",
-      "ageDays": 252,
+      "ageDays": 322,
       "file": "src/content/programs/perplexity/perplexity-for-startups.yaml"
     },
     {
       "slug": "phospho/phospho-startup-program-get-2000-ai-builder-credits-for-free-find-pmf-with-your-ai-saas-faster",
       "title": "Phospho Startup Program: Get $2000 AI Builder Credits for Free (Find PMF with Your AI SaaS Faster)",
       "verified": "2025-10-20",
-      "ageDays": 252,
+      "ageDays": 322,
       "file": "src/content/programs/phospho/phospho-startup-program-get-2000-ai-builder-credits-for-free-find-pmf-with-your-ai-saas-faster.yaml"
     },
     {
       "slug": "pilot/pilot-for-startups-program",
       "title": "Pilot for Startups Program",
       "verified": "2025-10-20",
-      "ageDays": 252,
+      "ageDays": 322,
       "file": "src/content/programs/pilot/pilot-for-startups-program.yaml"
     },
     {
       "slug": "pinecone/pinecone-for-startups",
       "title": "Pinecone for Startups",
       "verified": "2025-10-20",
-      "ageDays": 252,
+      "ageDays": 322,
       "file": "src/content/programs/pinecone/pinecone-for-startups.yaml"
     },
     {
       "slug": "playai/playai-education-nonprofit-discount",
       "title": "PlayAI Education & Nonprofit Discount",
       "verified": "2025-10-20",
-      "ageDays": 252,
+      "ageDays": 322,
       "file": "src/content/programs/playai/playai-education-nonprofit-discount.yaml"
     },
     {
       "slug": "posthog/posthog-for-startups",
       "title": "PostHog for Startups",
       "verified": "2025-10-20",
-      "ageDays": 252,
+      "ageDays": 322,
       "file": "src/content/programs/posthog/posthog-for-startups.yaml"
     },
     {
       "slug": "postmark/postmark-bootstrapper-offer",
       "title": "Postmark Bootstrapper Offer",
       "verified": "2025-10-20",
-      "ageDays": 252,
+      "ageDays": 322,
       "file": "src/content/programs/postmark/postmark-bootstrapper-offer.yaml"
     },
     {
       "slug": "pulumi/pulumi-for-startups",
       "title": "Pulumi for Startups",
       "verified": "2025-10-20",
-      "ageDays": 252,
+      "ageDays": 322,
       "file": "src/content/programs/pulumi/pulumi-for-startups.yaml"
     },
     {
       "slug": "qdrant/qdrant-for-startups",
       "title": "Qdrant for Startups",
       "verified": "2025-10-20",
-      "ageDays": 252,
+      "ageDays": 322,
       "file": "src/content/programs/qdrant/qdrant-for-startups.yaml"
     },
     {
       "slug": "quicknode/quicknode-startup-program",
       "title": "QuickNode Startup Program",
       "verified": "2025-10-20",
-      "ageDays": 252,
+      "ageDays": 322,
       "file": "src/content/programs/quicknode/quicknode-startup-program.yaml"
     },
     {
       "slug": "reclaim/reclaim-startup-discount-program",
       "title": "Reclaim Startup Discount Program",
       "verified": "2025-10-20",
-      "ageDays": 252,
+      "ageDays": 322,
       "file": "src/content/programs/reclaim/reclaim-startup-discount-program.yaml"
     },
     {
       "slug": "reddit/500-reddit-ads-credit-for-new-advertisers",
       "title": "$500 Reddit Ads Credit for New Advertisers",
       "verified": "2025-10-20",
-      "ageDays": 252,
+      "ageDays": 322,
       "file": "src/content/programs/reddit/500-reddit-ads-credit-for-new-advertisers.yaml"
     },
     {
       "slug": "redis/redis-startup-program",
       "title": "Redis Startup Program",
       "verified": "2025-10-20",
-      "ageDays": 252,
+      "ageDays": 322,
       "file": "src/content/programs/redis/redis-startup-program.yaml"
     },
     {
       "slug": "remote/remote-for-startups-program",
       "title": "Remote For Startups Program",
       "verified": "2025-10-20",
-      "ageDays": 252,
+      "ageDays": 322,
       "file": "src/content/programs/remote/remote-for-startups-program.yaml"
     },
     {
       "slug": "remotepass/remotepass-startup-discount-program",
       "title": "RemotePass Startup Discount Program",
       "verified": "2025-10-20",
-      "ageDays": 252,
+      "ageDays": 322,
       "file": "src/content/programs/remotepass/remotepass-startup-discount-program.yaml"
     },
     {
       "slug": "remotepass/remotepass-startup-program",
       "title": "RemotePass Startup Program",
       "verified": "2025-10-20",
-      "ageDays": 252,
+      "ageDays": 322,
       "file": "src/content/programs/remotepass/remotepass-startup-program.yaml"
     },
     {
       "slug": "retool/retool-for-startups",
       "title": "Retool for Startups",
       "verified": "2025-10-20",
-      "ageDays": 252,
+      "ageDays": 322,
       "file": "src/content/programs/retool/retool-for-startups.yaml"
     },
     {
       "slug": "rime/rime-api-credits-program-for-yc-startups",
       "title": "Rime API Credits Program for YC Startups",
       "verified": "2025-10-20",
-      "ageDays": 252,
+      "ageDays": 322,
       "file": "src/content/programs/rime/rime-api-credits-program-for-yc-startups.yaml"
     },
     {
       "slug": "scalegrid/scalegrid-startup-program",
       "title": "ScaleGrid Startup Program",
       "verified": "2025-10-20",
-      "ageDays": 252,
+      "ageDays": 322,
       "file": "src/content/programs/scalegrid/scalegrid-startup-program.yaml"
     },
     {
       "slug": "scaleway/scaleway-startup-program-for-nvidia-inception-members",
       "title": "Scaleway Startup Program for NVIDIA Inception Members",
       "verified": "2025-10-20",
-      "ageDays": 252,
+      "ageDays": 322,
       "file": "src/content/programs/scaleway/scaleway-startup-program-for-nvidia-inception-members.yaml"
     },
     {
       "slug": "scaleway/scaleway-startup-program",
       "title": "Scaleway Startup Program",
       "verified": "2025-10-20",
-      "ageDays": 252,
+      "ageDays": 322,
       "file": "src/content/programs/scaleway/scaleway-startup-program.yaml"
     },
     {
       "slug": "scalingo/scalingo-startup-program",
       "title": "Scalingo Startup Program",
       "verified": "2025-10-20",
-      "ageDays": 252,
+      "ageDays": 322,
       "file": "src/content/programs/scalingo/scalingo-startup-program.yaml"
     },
     {
       "slug": "scraperapi/scraperapi-free-plan-and-trial",
       "title": "ScraperAPI Free Plan and Trial",
       "verified": "2025-10-20",
-      "ageDays": 252,
+      "ageDays": 322,
       "file": "src/content/programs/scraperapi/scraperapi-free-plan-and-trial.yaml"
     },
     {
       "slug": "segment/twilio-segment-startup-program",
       "title": "Twilio Segment Startup Program",
       "verified": "2025-10-20",
-      "ageDays": 252,
+      "ageDays": 322,
       "file": "src/content/programs/segment/twilio-segment-startup-program.yaml"
     },
     {
       "slug": "sentry/sentry-startup-program",
       "title": "Sentry Startup Program",
       "verified": "2025-10-20",
-      "ageDays": 252,
+      "ageDays": 322,
       "file": "src/content/programs/sentry/sentry-startup-program.yaml"
     },
     {
       "slug": "shopify/shopify-free-trial-pricing-options",
       "title": "Shopify 3 Month Trial",
       "verified": "2025-10-20",
-      "ageDays": 252,
+      "ageDays": 322,
       "file": "src/content/programs/shopify/shopify-free-trial-pricing-options.yaml"
     },
     {
       "slug": "shotstack/shotstack-startup-program",
       "title": "Shotstack Startup Program",
       "verified": "2025-10-20",
-      "ageDays": 252,
+      "ageDays": 322,
       "file": "src/content/programs/shotstack/shotstack-startup-program.yaml"
     },
     {
       "slug": "signzy/signzy-for-startups-program",
       "title": "Signzy for Startups Program",
       "verified": "2025-10-20",
-      "ageDays": 252,
+      "ageDays": 322,
       "file": "src/content/programs/signzy/signzy-for-startups-program.yaml"
     },
     {
       "slug": "slab/slab-nonprofit-education-discount-program",
       "title": "Slab Nonprofit & Education Discount Program",
       "verified": "2025-10-20",
-      "ageDays": 252,
+      "ageDays": 322,
       "file": "src/content/programs/slab/slab-nonprofit-education-discount-program.yaml"
     },
     {
       "slug": "snapchat/snapchat-advertising-credit-offer",
       "title": "Snapchat Advertising Credit Offer",
       "verified": "2025-10-20",
-      "ageDays": 252,
+      "ageDays": 322,
       "file": "src/content/programs/snapchat/snapchat-advertising-credit-offer.yaml"
     },
     {
       "slug": "squarespace/free-google-workspace-business-starter-offer",
       "title": "Free Google Workspace Business Starter Offer",
       "verified": "2025-10-20",
-      "ageDays": 252,
+      "ageDays": 322,
       "file": "src/content/programs/squarespace/free-google-workspace-business-starter-offer.yaml"
     },
     {
       "slug": "statsig/statsig-startup-program",
       "title": "Statsig Startup Program",
       "verified": "2025-10-20",
-      "ageDays": 252,
+      "ageDays": 322,
       "file": "src/content/programs/statsig/statsig-startup-program.yaml"
     },
     {
       "slug": "stripe-atlas/stripe-atlas-founder-perks",
       "title": "Stripe Atlas Founder Perks",
       "verified": "2025-10-20",
-      "ageDays": 252,
+      "ageDays": 322,
       "file": "src/content/programs/stripe-atlas/stripe-atlas-founder-perks.yaml"
     },
     {
       "slug": "stytch/stytch-startup-program",
       "title": "Stytch Startup Program",
       "verified": "2025-10-20",
-      "ageDays": 252,
+      "ageDays": 322,
       "file": "src/content/programs/stytch/stytch-startup-program.yaml"
     },
     {
       "slug": "synadia/synadia-evaluation-agreement",
       "title": "Synadia Free Trial",
       "verified": "2025-10-20",
-      "ageDays": 252,
+      "ageDays": 322,
       "file": "src/content/programs/synadia/synadia-evaluation-agreement.yaml"
     },
     {
       "slug": "temporal/temporal-cloud-for-startups",
       "title": "Temporal Cloud for Startups",
       "verified": "2025-10-20",
-      "ageDays": 252,
+      "ageDays": 322,
       "file": "src/content/programs/temporal/temporal-cloud-for-startups.yaml"
     },
     {
       "slug": "tencent/tencent-cloud-startup-program",
       "title": "Tencent Cloud Startup Program",
       "verified": "2025-10-20",
-      "ageDays": 252,
+      "ageDays": 322,
       "file": "src/content/programs/tencent/tencent-cloud-startup-program.yaml"
     },
     {
       "slug": "thirdweb/thirdweb-startup-program",
       "title": "thirdweb Startup Program",
       "verified": "2025-10-20",
-      "ageDays": 252,
+      "ageDays": 322,
       "file": "src/content/programs/thirdweb/thirdweb-startup-program.yaml"
     },
     {
       "slug": "tidb/tidb-cloud-serverless-credits-for-open-source-heroes",
       "title": "TiDB Cloud Serverless Credits for Open-Source Heroes",
       "verified": "2025-10-20",
-      "ageDays": 252,
+      "ageDays": 322,
       "file": "src/content/programs/tidb/tidb-cloud-serverless-credits-for-open-source-heroes.yaml"
     },
     {
       "slug": "tiktok/tiktok-ads-manager-welcome-gift",
       "title": "TikTok Ads Manager Welcome Gift",
       "verified": "2025-10-20",
-      "ageDays": 252,
+      "ageDays": 322,
       "file": "src/content/programs/tiktok/tiktok-ads-manager-welcome-gift.yaml"
     },
     {
       "slug": "twentysix/twentysix-cloud-acceleratooor-web3-startup-program",
       "title": "Twentysix Cloud Acceleratooor Web3 Startup Program",
       "verified": "2025-10-20",
-      "ageDays": 252,
+      "ageDays": 322,
       "file": "src/content/programs/twentysix/twentysix-cloud-acceleratooor-web3-startup-program.yaml"
     },
     {
       "slug": "typeform/typeform-startup-program",
       "title": "Typeform Startup Program",
       "verified": "2025-10-20",
-      "ageDays": 252,
+      "ageDays": 322,
       "file": "src/content/programs/typeform/typeform-startup-program.yaml"
     },
     {
       "slug": "unity/unity-multiplay-game-server-hosting-sign-up-credit",
       "title": "Unity Multiplay Game Server Hosting Sign-up Credit",
       "verified": "2025-10-20",
-      "ageDays": 252,
+      "ageDays": 322,
       "file": "src/content/programs/unity/unity-multiplay-game-server-hosting-sign-up-credit.yaml"
     },
     {
       "slug": "vanta/vanta-for-startups",
       "title": "Vanta for Startups",
       "verified": "2025-10-20",
-      "ageDays": 252,
+      "ageDays": 322,
       "file": "src/content/programs/vanta/vanta-for-startups.yaml"
     },
     {
       "slug": "veridion/veridion-startup-program",
       "title": "Veridion Startup Program",
       "verified": "2025-10-20",
-      "ageDays": 252,
+      "ageDays": 322,
       "file": "src/content/programs/veridion/veridion-startup-program.yaml"
     },
     {
       "slug": "vultr/vip-digital-startup-program",
       "title": "VIP Digital Startup Program",
       "verified": "2025-10-20",
-      "ageDays": 252,
+      "ageDays": 322,
       "file": "src/content/programs/vultr/vip-digital-startup-program.yaml"
     },
     {
       "slug": "vultr/vultr-250-free-credit-program",
       "title": "Vultr $250 Free Credit Program",
       "verified": "2025-10-20",
-      "ageDays": 252,
+      "ageDays": 322,
       "file": "src/content/programs/vultr/vultr-250-free-credit-program.yaml"
     },
     {
       "slug": "webflow/webflow-for-startups-program",
       "title": "Webflow for Startups Program",
       "verified": "2025-10-20",
-      "ageDays": 252,
+      "ageDays": 322,
       "file": "src/content/programs/webflow/webflow-for-startups-program.yaml"
     },
     {
       "slug": "wope/early-stage-program",
       "title": "Wope Early Stage Program",
       "verified": "2025-10-20",
-      "ageDays": 252,
+      "ageDays": 322,
       "file": "src/content/programs/wope/early-stage-program.yaml"
     },
     {
       "slug": "xai/data-sharing-program",
       "title": "xAI Data Sharing Program",
       "verified": "2025-10-20",
-      "ageDays": 252,
+      "ageDays": 322,
       "file": "src/content/programs/xai/data-sharing-program.yaml"
     },
     {
       "slug": "you/tldr-pro-plan-discount-offer-via-you-com-partnership",
       "title": "You.com Pro Plan Discount Offer via You.com Partnership",
       "verified": "2025-10-20",
-      "ageDays": 252,
+      "ageDays": 322,
       "file": "src/content/programs/you/tldr-pro-plan-discount-offer-via-you-com-partnership.yaml"
     },
     {
       "slug": "zapier/zapier-14-day-free-pro-trial",
       "title": "Zapier 14-Day Free Pro Trial",
       "verified": "2025-10-20",
-      "ageDays": 252,
+      "ageDays": 322,
       "file": "src/content/programs/zapier/zapier-14-day-free-pro-trial.yaml"
     },
     {
       "slug": "zendesk/zendesk-for-startups-program",
       "title": "Zendesk for Startups Program",
       "verified": "2025-10-20",
-      "ageDays": 252,
+      "ageDays": 322,
       "file": "src/content/programs/zendesk/zendesk-for-startups-program.yaml"
     },
     {
       "slug": "zenduty/zenduty-early-stage-program",
       "title": "Zenduty Early Stage Program",
       "verified": "2025-10-20",
-      "ageDays": 252,
+      "ageDays": 322,
       "file": "src/content/programs/zenduty/zenduty-early-stage-program.yaml"
     },
     {
       "slug": "zoho/zoho-for-startups-program",
       "title": "Zoho for Startups Program",
       "verified": "2025-10-20",
-      "ageDays": 252,
+      "ageDays": 322,
       "file": "src/content/programs/zoho/zoho-for-startups-program.yaml"
     }
   ]
